@@ -3,10 +3,11 @@
 # This is a script to organise recordings from dailydigest folder
 
 # Define directories with relative paths
-dailyingest_dir=dailyingest
-byDate_dir=audio/byDate
-byContributor_dir=audio/byContributor
-byTopic_dir=audio/byTopic
+dailyingest_dir=${1:-dailyingest}
+audio_dir=${2:-audio/}
+byDate_dir=$audio_dir/byDate
+byContributor_dir=$audio_dir/byContributor
+byTopic_dir=$audio_dir/byTopic
 badfiles_dir=badfiles
 
 # Create directories if they don't exist
