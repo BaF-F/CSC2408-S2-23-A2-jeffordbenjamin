@@ -8,7 +8,7 @@ audio_dir=${2:-audio/}
 byDate_dir=$audio_dir/byDate
 byContributor_dir=$audio_dir/byContributor
 byTopic_dir=$audio_dir/byTopic
-badfiles_dir=badfiles
+badfiles_dir=${3:-badfiles}
 
 # Create directories if they don't exist
 mkdir -p $byDate_dir
@@ -42,6 +42,7 @@ for file in $dailyingest_dir/*.*; do
             # Create a symbolic link in byContributor directory
             ln -s ../../../"$byDate_dir/$filename" "$byContributor_dir/$contributor/"
 
+            # Create a symbolic link in byTopic directory
             ln -s ../../../"$byDate_dir/$filename" "$byTopic_dir/$topic/"
 
         else
@@ -49,6 +50,4 @@ for file in $dailyingest_dir/*.*; do
             mv "$file" "$badfiles_dir"
         fi
     fi
-
-
 done
