@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# Define directories
+dailyingest_dir=./dailyingest
+byDate_dir=./audio/byDate
+byContributor_dir=./audio/byContributor
+byTopic_dir=./audio/byTopic
+badfiles_dir=./badfiles
+
+# Create directories if they don't exist
+mkdir -p $byDate_dir
+mkdir -p $byContributor_dir
+mkdir -p $byTopic_dir
+mkdir -p $badfiles_dir
+
+# Process files in dailyingest
+for file in $dailyingest_dir/; do
+	rm $file
+    if [[ -f $file ]]; then
+        # Extract information from the filename
+        filename=$(basename "$file")
+        date=$(echo $filename | cut -d'-' -f1)
+        topic=$(echo $filename | cut -d'-' -f2)
+        contributor=$(echo $filename | cut -d'-' -f3)
+		
+		echo filename
+		echo topic
+        
+        # Check if contributor and topic are valid
+        if [[ ($contributor == "Stan" || $contributor == "Livia" || $contributor == "Mark") &&
+              ($topic == "sport" || $topic == "politics" || $topic == "business" || $topic == "technology") ]]; then
+            # Move file to byDate directory
+            mv "$file" "$byDate_dir"
+            
+			echo "filename"
+			
+            # Create a symbolic link in byContributor directory
+            ln -s "$byDate_dir/$filename" "$byContributor_dir/$contributor/"
+        else
+            # If contributor or topic is invalid, move to badfiles directory
+            mv "$file" "$badfiles_dir"
+        fi
+    fi
+done
+
+# Create symbolic links in byTopic directory
+# for topic_dir in $byTopic_dir/; do
+    # topic_name=$(basename "$topic_dir")
+    # ln -s "$byDate_dir"/"$topic_name" "$topic_dir/"
+# done
