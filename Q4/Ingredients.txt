@@ -1,0 +1,14 @@
+RecipeID,ingredient
+re017,spaghetti
+re619,lasagna
+re017,mince
+re578,chips
+re017,spices
+re017,parmasan
+re578,salmon
+re578,lettuce
+re619,lasagna
+re619,chicken
+re861,mince
+re861,rolls
+re861,cucumber
