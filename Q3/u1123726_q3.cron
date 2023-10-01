@@ -1,0 +1,4 @@
+# The following cron job will run the script at 4 equally spaced times on Tuesday, Thursday, Friday, and Sunday
+# This will run at 00:00, 06:00, 12:00, and 18:00 on teh specified days.
+
+0 0,6,12,18 * * 2,4,5,7 /path/to/u1123726_q3.sh /path/to/ipweatherdata.csv
