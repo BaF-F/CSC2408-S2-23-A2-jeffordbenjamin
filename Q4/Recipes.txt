@@ -3,3 +3,4 @@ re017,Spaghetti with Meatballs
 re619,Chicken Lasagna Soup
 re578,BBQ Salmon with Chips
 re861,Classic hamburger
+re001,burnt toast

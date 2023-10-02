@@ -3,17 +3,17 @@
 ## Recipe Report
 
 **Recipe ID:** [RecipeID]
-
 **Recipe Description:** [Recipe Description]
 
-
-
-| Person | *score out of* | Score |
-| --- | --- | --- |
-| Person 1 | 10 | [Score1] |
-| Person 2 | 10 | [Score2] |
-| Person 3 | 10 | [Score3] |
-| **Total** | **30** | **[TotalScore]** |
+:-----:
+|Person |*score out of*|Score|
+:-----:
+|Person 1 |10|S1
+|Person 2 |10|[Score2]
+|Person 3 |10|[Score3]
+:-----:
+| Total |30|[TotalScore]|
+:-----:
 
 **Comments on the scores:** 
 
